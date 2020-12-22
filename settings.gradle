@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "RealworldIO Kotlin MVVM Retrofit"
