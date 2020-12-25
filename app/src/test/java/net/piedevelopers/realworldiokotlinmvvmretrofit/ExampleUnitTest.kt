@@ -1,8 +1,16 @@
 package net.piedevelopers.realworldiokotlinmvvmretrofit
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import net.piedevelopers.api.RetrofitClient
+import net.piedevelopers.api.repo.ArticlesRepo
+import net.piedevelopers.api.response.AllArticleResponse
+import org.junit.Assert
 import org.junit.Test
-
-import org.junit.Assert.*
+import retrofit2.Call
+import retrofit2.Response
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -10,8 +18,17 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
+    val retrofitClient=RetrofitClient()
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+     fun getallarticles() {
+
+        //execute command is required for testing purpose
+        //for suspend functions we run test inside runblocking method
+
+     runBlocking {
+     val articles = ArticlesRepo.getGlobalFeed().execute()
+       Assert.assertNotNull(articles.body()?.articles)
+}
+
     }
 }
