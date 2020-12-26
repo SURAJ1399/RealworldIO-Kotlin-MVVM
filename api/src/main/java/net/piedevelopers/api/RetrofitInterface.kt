@@ -8,6 +8,6 @@ import retrofit2.http.GET
 interface RetrofitInterface {
 
     @GET("articles")
-    fun getArticles(
-    ): Call<AllArticleResponse>
+   suspend fun getArticles(
+    ): Response<AllArticleResponse>
 }

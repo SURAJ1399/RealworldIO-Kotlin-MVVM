@@ -22,11 +22,11 @@ class ExampleUnitTest {
     @Test
      fun getallarticles() {
 
-        //execute command is required for testing purpose
+        //execute command is required for testing purpose if interface method ic Call type
         //for suspend functions we run test inside runblocking method
 
      runBlocking {
-     val articles = ArticlesRepo.getGlobalFeed().execute()
+     val articles = ArticlesRepo.getGlobalFeed()
        Assert.assertNotNull(articles.body()?.articles)
 }
 
