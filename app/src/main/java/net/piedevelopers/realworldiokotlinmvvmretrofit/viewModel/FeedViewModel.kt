@@ -1,4 +1,4 @@
-package net.piedevelopers.realworldiokotlinmvvmretrofit
+package net.piedevelopers.realworldiokotlinmvvmretrofit.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import net.piedevelopers.api.repo.ArticlesRepo
-import net.piedevelopers.api.response.AllArticleResponse
 import net.piedevelopers.api.response.Article
 
 class FeedViewModel: ViewModel() {

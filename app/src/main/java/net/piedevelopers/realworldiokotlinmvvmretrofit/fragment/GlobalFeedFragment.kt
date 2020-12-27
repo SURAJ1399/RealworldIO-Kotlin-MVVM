@@ -1,4 +1,4 @@
-package net.piedevelopers.realworldiokotlinmvvmretrofit.ui
+package net.piedevelopers.realworldiokotlinmvvmretrofit.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.rvtutorial.FeedAdapter
 import net.piedevelopers.api.response.Article
 
-import net.piedevelopers.realworldiokotlinmvvmretrofit.FeedViewModel
+import net.piedevelopers.realworldiokotlinmvvmretrofit.viewModel.FeedViewModel
 import net.piedevelopers.realworldiokotlinmvvmretrofit.databinding.FeedfragmentLayoutBinding
 
 class GlobalFeedFragment:Fragment() {
 
     var _binding:FeedfragmentLayoutBinding?=null;
-    lateinit var viewModel:FeedViewModel
+    lateinit var viewModel: FeedViewModel
     lateinit var feedAdapter: FeedAdapter;
 
     override fun onCreateView(
