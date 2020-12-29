@@ -9,11 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 
 import net.piedevelopers.realworldiokotlinmvvmretrofit.databinding.FragmentLoginBinding
+import net.piedevelopers.realworldiokotlinmvvmretrofit.viewModel.AuthViewModel
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
-   // val authViewModel: AuthViewModel by activityViewModels()
+    val authViewModel: AuthViewModel by activityViewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -30,13 +31,15 @@ class LoginFragment : Fragment() {
 
         _binding?.apply {
             loginButton.setOnClickListener {
-//                authViewModel.login(
-//                        emailEditText.text.toString(),
-//                        passwordEditText.text.toString()
-//                )
+                authViewModel.login(
+                        emailEditText.text.toString(),
+                        passwordEditText.text.toString()
+                )
             }
 
         }
+
+
     }
 
     override fun onDestroyView() {

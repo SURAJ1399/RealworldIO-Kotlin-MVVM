@@ -17,4 +17,10 @@
         tools:layout="@layout/fragment_auth"
         android:name="net.piedevelopers.realworldiokotlinmvvmretrofit.fragment.AuthFragment"
         android:label="AuthFragment" />
+
+    <fragment
+        android:id="@+id/nav_update"
+        tools:layout="@layout/fragment_update"
+        android:name="net.piedevelopers.realworldiokotlinmvvmretrofit.fragment.UpdateUserFragment"
+        android:label="AuthFragment" />
 </navigation>

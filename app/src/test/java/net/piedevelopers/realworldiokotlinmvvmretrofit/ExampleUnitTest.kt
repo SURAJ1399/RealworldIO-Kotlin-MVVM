@@ -1,16 +1,13 @@
 package net.piedevelopers.realworldiokotlinmvvmretrofit
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import net.piedevelopers.api.RetrofitClient
 import net.piedevelopers.api.repo.ArticlesRepo
-import net.piedevelopers.api.response.AllArticleResponse
+import net.piedevelopers.api.repo.UsersRepo
+
 import org.junit.Assert
 import org.junit.Test
-import retrofit2.Call
-import retrofit2.Response
+import java.sql.Types.NULL
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -18,17 +15,56 @@ import retrofit2.Response
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
-    val retrofitClient=RetrofitClient()
+    val retrofitClient = RetrofitClient()
+
     @Test
-     fun getallarticles() {
+    fun getallarticles() {
 
         //execute command is required for testing purpose if interface method ic Call type
         //for suspend functions we run test inside runblocking method
 
-     runBlocking {
-     val articles = ArticlesRepo.getGlobalFeed()
-       Assert.assertNotNull(articles.body()?.articles)
-}
+        runBlocking {
+            val articles = ArticlesRepo.getGlobalFeed()
+            Assert.assertNotNull(articles.body()?.articles)
+        }
+    }
+
+
+        @Test
+        fun getsignupresponse() {
+
+            //execute command is required for testing purpose if interface method ic Call type
+            //for suspend functions we run test inside runblocking method
+
+            runBlocking {
+                val signupresp = UsersRepo.signup("ruesh123","ruesh123@gmail.com","ruesh@123")
+                Assert.assertNotNull(signupresp.body())
+            }
+
+        }
+    @Test
+    fun getloginresponse() {
+
+        //execute command is required for testing purpose if interface method ic Call type
+        //for suspend functions we run test inside runblocking method
+
+        runBlocking {
+            val loginresp = UsersRepo.login("ruesh123@gmail.com","ruesh@123")
+            Assert.assertNotNull(loginresp?.token)
+        }
+
 
     }
+
+    @Test
+    fun updateuser()
+    {
+        runBlocking {
+            val response=UsersRepo.updateUser("updated user","","","","")
+            Assert.assertNotNull(response?.bio)
+        }
+    }
+
+
+
 }

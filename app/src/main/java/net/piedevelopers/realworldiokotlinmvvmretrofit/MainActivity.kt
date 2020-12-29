@@ -1,6 +1,8 @@
 package net.piedevelopers.realworldiokotlinmvvmretrofit
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.provider.Settings.Secure.putString
 import android.view.Menu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -13,10 +15,18 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.edit
+import net.piedevelopers.realworldiokotlinmvvmretrofit.viewModel.AuthViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var sharedPreferences: SharedPreferences
+    lateinit var authViewModel:AuthViewModel
+    companion object {
+        const val PREFS_FILE_AUTH = "prefs_auth"
+        const val PREFS_KEY_TOKEN = "token"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,11 +46,27 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
                 R.id.nav_feed,
-                R.id.nav_auth
+                R.id.nav_auth,
+                R.id.nav_update
 
         ), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+//        authViewModel.user.observe({ lifecycle }) {
+//           // updateMenu(it)
+//            it?.token?.let { t ->
+//                sharedPreferences.edit {
+//                    putString(PREFS_KEY_TOKEN, t)
+//                }
+//            } ?: run {
+//                sharedPreferences.edit {
+//                    remove(PREFS_KEY_TOKEN)
+//                }
+//            }
+//            navController.navigateUp()
+//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

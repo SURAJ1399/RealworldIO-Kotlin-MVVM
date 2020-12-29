@@ -1,5 +1,9 @@
 package net.piedevelopers.api.request
 
+import com.google.gson.annotations.SerializedName
+
 data class SignupRequest(
-    val signupdata: SignupData
+
+        @SerializedName("user")
+        val signupdata: SignupData
 )
