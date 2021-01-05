@@ -6,18 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.rvtutorial.FeedAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import net.piedevelopers.api.response.Article
 
 import net.piedevelopers.realworldiokotlinmvvmretrofit.viewModel.FeedViewModel
 import net.piedevelopers.realworldiokotlinmvvmretrofit.databinding.FeedfragmentLayoutBinding
 
+
 class GlobalFeedFragment:Fragment() {
 
     var _binding:FeedfragmentLayoutBinding?=null;
-    lateinit var viewModel: FeedViewModel
+    val viewModel: FeedViewModel by activityViewModels()
+
     lateinit var feedAdapter: FeedAdapter;
 
     override fun onCreateView(
@@ -25,8 +31,8 @@ class GlobalFeedFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel=ViewModelProvider(this).get(FeedViewModel::class.java)
-        val items=viewModel.fetchGlobalFeed()
+    //    viewModel=ViewModelProvider(this).get(FeedViewModel::class.java)
+       val items=viewModel.fetchGlobalFeed()
       feedAdapter = FeedAdapter()
         _binding= FeedfragmentLayoutBinding.inflate(inflater
                 ,container,false)

@@ -16,6 +16,7 @@ class UpdateUserFragment:Fragment() {
 
     var _binding:FragmentUpdateBinding?=null
      val authViewModel by activityViewModels<AuthViewModel>()
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,

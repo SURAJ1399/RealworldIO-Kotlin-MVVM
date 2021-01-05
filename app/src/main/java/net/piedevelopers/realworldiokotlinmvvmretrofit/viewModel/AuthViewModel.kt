@@ -4,13 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.launch
+import net.piedevelopers.api.RetrofitInterface
 import net.piedevelopers.api.repo.UsersRepo
 import net.piedevelopers.api.response.User
 import net.piedevelopers.api.response.UserResponse
 import retrofit2.Response
+import javax.inject.Inject
 
-class AuthViewModel:ViewModel() {
+
+class AuthViewModel
+    :ViewModel() {
    private val _user = MutableLiveData<User?> ()
     val user:LiveData<User?> = _user
 

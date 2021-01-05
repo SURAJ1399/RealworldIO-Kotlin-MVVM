@@ -5,7 +5,9 @@ import net.piedevelopers.api.RetrofitClient
 import net.piedevelopers.api.request.*
 import net.piedevelopers.api.response.User
 
+
 object  UsersRepo {
+
     val retrofitClient = RetrofitClient()
 
     suspend fun signup(username: String, email: String, password: String) =
