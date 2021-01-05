@@ -1,0 +1,35 @@
+[33mcommit fcf92a2eb227f8a7e12f5ffb1c11a3566d412cf1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: suraj1399 <surajkumar068@rediffmail.com>
+Date:   Wed Jan 6 02:55:48 2021 +0530
+
+    Added Hilt Dependency Injection For Retrofit Client,Interface,ViewModel & BaseUrl
+
+[33mcommit 9ce9ccb4a1f6d5769c799eef263bf8369e8baaa0[m
+Author: suraj1399 <surajkumar068@rediffmail.com>
+Date:   Wed Dec 30 02:39:21 2020 +0530
+
+    Login Done,token fetched ,Update User Profile DOne
+
+[33mcommit de86a35b6df7ac1b49c1f4474a89c0c5025d0a72[m
+Author: suraj1399 <surajkumar068@rediffmail.com>
+Date:   Mon Dec 28 04:43:38 2020 +0530
+
+    Signup,Logn Fragment Setuped
+
+[33mcommit 6ee070f6347f9872e92cb5f64d0f7ecc2d04a89d[m
+Author: suraj1399 <surajkumar068@rediffmail.com>
+Date:   Sun Dec 27 05:14:00 2020 +0530
+
+    All Feed Data Fetched And Shown On Recy View
+
+[33mcommit 61aac505be80950e1601edaa91f1045a10634b46[m
+Author: suraj1399 <surajkumar068@rediffmail.com>
+Date:   Sat Dec 26 04:38:55 2020 +0530
+
+    GetAllArticles Testing Done
+
+[33mcommit 7dc2a8ee906ddcf913931b8e084c4a841d8e3b1a[m
+Author: suraj1399 <surajkumar068@rediffmail.com>
+Date:   Wed Dec 23 03:50:08 2020 +0530
+
+    Feed Fragment Created,ViewBinding Enabled,FeedAdapter Created
