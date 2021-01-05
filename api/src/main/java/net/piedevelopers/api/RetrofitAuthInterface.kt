@@ -21,5 +21,7 @@ interface RetrofitAuthInterface {
     ): Response<UserResponse>
 
 
+    @GET("user")
+    suspend fun getCurrentUser(): Response<UserResponse>
 
 }

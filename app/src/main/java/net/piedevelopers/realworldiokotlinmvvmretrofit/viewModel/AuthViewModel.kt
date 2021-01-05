@@ -40,4 +40,9 @@ class AuthViewModel
             _user.postValue(it)
         }
     }
+    fun getCurrentUser(token: String) = viewModelScope.launch {
+        UsersRepo.getCurrentUser(token)?.let {
+            _user.postValue(it)
+        }
+    }
 }

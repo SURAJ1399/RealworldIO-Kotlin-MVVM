@@ -18,14 +18,14 @@ object  UsersRepo {
             )
 
     suspend fun login(email: String, password: String): User? {
-        val response=retrofitClient.api.loginUser(
+        val response = retrofitClient.api.loginUser(
                 LoginRequest(LoginData(
                         email, password)
                 )
         )
 
-        retrofitClient.authToken= response.body()?.user?.token
-        Log.i("token",response.body()?.user?.token)
+        retrofitClient.authToken = response.body()?.user?.token
+        Log.i("token", response.body()?.user?.token)
         return response.body()?.user
 
     }
@@ -43,4 +43,14 @@ object  UsersRepo {
 
         return response.body()?.user
     }
+
+    suspend fun getCurrentUser(token: String): User? {
+        retrofitClient.authToken = token
+      val response=retrofitClient.authapi.getCurrentUser().body()?.user
+        Log.i("response", response.toString())
+        return  response
+    }
 }
+
+
+
