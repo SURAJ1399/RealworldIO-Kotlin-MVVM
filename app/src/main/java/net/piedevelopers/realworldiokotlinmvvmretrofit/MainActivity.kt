@@ -18,7 +18,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.edit
 import dagger.hilt.android.AndroidEntryPoint
 import net.piedevelopers.realworldiokotlinmvvmretrofit.viewModel.AuthViewModel
-@AndroidEntryPoint
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration

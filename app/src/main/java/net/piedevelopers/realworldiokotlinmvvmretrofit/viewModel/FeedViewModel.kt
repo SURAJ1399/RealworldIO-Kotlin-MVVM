@@ -7,16 +7,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import net.piedevelopers.api.repo.ArticlesRepo
-import net.piedevelopers.api.repo.ArticlesRepob
 import net.piedevelopers.api.response.Article
 
 
 class FeedViewModel
 
-@ViewModelInject
-constructor(
-        val articlesRepob: ArticlesRepob
-)
+
         :ViewModel() {
 
 
@@ -24,15 +20,9 @@ constructor(
     val feed: LiveData<List<Article>> = _feed
 
 
-//    fun fetchGlobalFeed() = viewModelScope.launch {
-//        ArticlesRepo.getGlobalFeed().body()?.let {
-//           _feed.postValue(it.articles)
-//        }
-//
-//    }
     fun fetchGlobalFeed() = viewModelScope.launch {
-        articlesRepob.getGlobalFeed().body()?.let {
-            _feed.postValue(it.articles)
+        ArticlesRepo.getGlobalFeed().body()?.let {
+           _feed.postValue(it.articles)
         }
 
     }
